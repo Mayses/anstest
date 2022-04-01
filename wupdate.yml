@@ -4,10 +4,8 @@
 
   - name: Single line PowerShell
     win_shell: |
-      # Prüfe ob Modul Vorhanden ist
       if(-not (Get-Module PSWindowsUpdate -ListAvailable)){
       Install-Module PSWindowsUpdate -Scope CurrentUser -Force
       }
 
-      #Prüfe Updates und Starte ggf. Neu
       Get-WindowsUpdate -AcceptAll -Install -AutoReboot
