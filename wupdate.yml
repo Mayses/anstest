@@ -9,5 +9,5 @@
       Install-Module PSWindowsUpdate -Scope CurrentUser -Force
       }
 
-      Prüfe Updates und Starte ggf. Neu
+      #Prüfe Updates und Starte ggf. Neu
       Get-WindowsUpdate -AcceptAll -Install -AutoReboot
