@@ -2,8 +2,8 @@
 - hosts: all
   tasks:
     -name: Run basic PowerShell script
-     ansible.windows.win_powershell:
-       script: |
+    ansible.windows.win_powershell:
+      script: |
          Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
          Install-PackageProvider -Name NuGet -Force
          Import-PackageProvider -Name NuGet
