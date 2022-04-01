@@ -3,4 +3,5 @@
   tasks:
 
   - name: Single line PowerShell
-    win_shell: echo "hello World"
+    win_shell: |
+      Get-Process | Out-File -FilePath c:\processes.txt
