@@ -1,8 +1,7 @@
 ---
-- hosts: all
-  tasks:
-  -name: Run basic PowerShell script
-   ansible.windows.win_powershell:
+- name: Windows Update
+  hosts: all
+  ansible.windows.win_powershell:
      script: |
         Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
         Install-PackageProvider -Name NuGet -Force
