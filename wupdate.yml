@@ -1,6 +1,6 @@
 ---
 - name: Install updates on domain controller
-  hosts: domaincontroller
+  hosts: all
   tasks:
     - name: search and install updates
       win_updates:
