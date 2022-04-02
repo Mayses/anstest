@@ -4,11 +4,7 @@
   tasks:
     - name: search and install updates
       win_updates:
-        category_names:
-          - SecurityUpdates
-          - CriticalUpdates
-          - OptionalUpdates
-          - UpdateRollups
+        category_names: '*'
         reboot: yes
         reboot_timeout: 600
         skip_optional: no
