@@ -1,11 +1,13 @@
 ---
-- hosts: all
+- name: Install updates on domain controller
+  hosts: domaincontroller
   tasks:
-
-  - name: Single line PowerShell
- 
-    become: yes
-    become_user: Administrator
-    win_shell: |
-      if(-not (Get-Module PSWindowsUpdate -ListAvailable)){Install-Module PSWindowsUpdate -Scope CurrentUser -Force}
-      Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+    - name: search and install updates
+      win_updates:
+        category_names:
+          - CriticalUpdates
+          - SecurityUpdates
+        reboot: yes
+        reboot_timeout: 600
+        log_path: c:\windows\logs\ansible_update_log.txt
+      register: update_result
