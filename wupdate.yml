@@ -4,9 +4,7 @@
   tasks:
     - name: search and install updates
       win_updates:
-        category_names:
-          - CriticalUpdates
-          - SecurityUpdates
+        category_names:  '*'
         reboot: yes
         reboot_timeout: 600
         log_path: c:\windows\logs\ansible_update_log.txt
