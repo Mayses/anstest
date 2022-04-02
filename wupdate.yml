@@ -7,8 +7,5 @@
     become: yes
     become_user: Administrator
     win_shell: |
-      if(-not (Get-Module PSWindowsUpdate -ListAvailable)){
-      Install-Module PSWindowsUpdate -Scope CurrentUser -Force
-      }
-
+      if(-not (Get-Module PSWindowsUpdate -ListAvailable)){Install-Module PSWindowsUpdate -Scope CurrentUser -Force}
       Get-WindowsUpdate -AcceptAll -Install -AutoReboot
