@@ -1,8 +1,14 @@
 ---
 - hosts: all
-  gather_facts: no
   tasks:
 
-    - win_whoami:
-      become: yes
-      become_user: Administrator
+  - name: Single line PowerShell
+ 
+    become: yes
+    become_user: Administrator
+    win_shell: |
+      if(-not (Get-Module PSWindowsUpdate -ListAvailable)){
+      Install-Module PSWindowsUpdate -Scope CurrentUser -Force
+      }
+
+      Get-WindowsUpdate -AcceptAll -Install -AutoReboot
