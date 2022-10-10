@@ -1,0 +1,1 @@
+kubernetes ansible_host=192.168.11.111 amsible_user=ansi ansible_ssh_key=
