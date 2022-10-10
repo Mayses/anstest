@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/test
 - ping:
-  copy:
+  - copy:
     src: test.txt
     dest: /home/test.txt
